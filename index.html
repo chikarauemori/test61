@@ -2,21 +2,17 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title></title>
-    <meta name="description" content="ページ概要" />
-    <meta name="author" content="製作者名" />
-    <meta name="keywords" content="キーワード1, キーワード2, ・・・" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-    src="https://kit.fontawesome.com/d0a601627a.js"
-    crossorigin="anonymous"
-  ></script>
-  <link
-    href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-    rel="stylesheet"
-  />
+    <title>マイページログイン</title>
+        <script
+      src="https://kit.fontawesome.com/d0a601627a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
     <header>
       <h1>
@@ -27,26 +23,26 @@
           height="100px"
         />
         クールシェア宝塚2025<br />
-        スタンプラリー獲得フォーム
+        スタンプラリーカード
       </h1>
     </header>
-
+    
     <form
+      id="userForm"
       action="https://script.google.com/macros/s/AKfycbxt2U7crAoXt1SohWM_uDphqrrKqj2Rjn2tffbRtCKvers-6UBs7Erd26J2WoTIrrln/exec"
       method="post"
     >
-      <label for="spotId"
-        ><h2>②スポットIDを貼り付ける</h2>
-        <span class="required">
-          先ほどコピーした値を貼り付けてください！</span
-        ></label
-      ><br />
-      <input type="text" name="spotId" id="spotId" required /><br />
-         <!-- ユーザーIDは動的に追加されます -->
-         <button type="submit">ログイン</button>
-        </form>
+    <label for="spotId"
+    ><h2>②スポットIDを貼り付ける</h2>
+    <span class="required">
+      先ほどコピーした値を貼り付けてください！</span
+    ></label
+  ><br />
+  <input type="text" name="spotId" id="spotId" required /><br />
+      <!-- ユーザーIDは動的に追加されます -->
+      <button type="submit">ログイン</button>
     </form>
-   
+
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
       liff
@@ -79,110 +75,95 @@
 
             // 必要に応じてボタンのテキストを変更する
             const submitButton = document.querySelector("button");
-            submitButton.textContent = "スタンプ獲得";
+            submitButton.textContent = "スタンプラリーカード";
           })
           .catch((err) => {
             console.log("プロフィール取得エラー: ", err);
           });
       });
     </script>
-     <nav>
-        <ui class="menu">
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-house"></i><br /><span class="iconname"
-                >ホーム</span
-              ></a
-            >
-          </li>
-          <li>
-            <a href="https://liff.line.me/2007108080-jR8JqOgX"
-              ><i class="fa-solid fa-location-dot"></i><br /><span
-                class="iconname"
-                >マップ</span
-              ></a
-            >
-          </li>
-          <li>
-            <a
-              href="
-              https://chikarauemori.github.io/test49/"
-              ><i class="fa-solid fa-location-pin"></i><br /><span
-                class="iconname"
-                >LINEログイン</span
-              ></a
-            >
-          </li>
-          <li>
-            <a href="https://chikarauemori.github.io/test22/"
-              ><i class="fa-solid fa-circle-user"></i><br /><span class="iconname"
-                >マイページ</span
-              ></a
-            >
-          </li>
-        </ui>
-      </nav>
-      <style>
-      @media screen and (max-width: 768px) {
+      <nav>
+    <ui class="menu">
+      <li>
+        <a href="https://chikarauemori.github.io/test57/"
+          ><i class="fa-solid fa-house"></i><br /><span class="iconname"
+            >ホーム</span
+          ></a
+        >
+      </li>
+      <li>
+        <a href=""
+          ><i class="fa-solid fa-location-dot"></i><br /><span class="iconname"
+            >マップ</span
+          ></a
+        >
+      </li>
+      <li>
+        <a
+          href="
+        https://liff.line.me/2007108080-jR8JqOgX"
+          ><i class="fa-solid fa-location-pin"></i><br /><span class="iconname"
+            >スタンプ獲得</span
+          ></a
+        >
+      </li>
+      <li>
+        <a href="https://chikarauemori.github.io/test60/"
+          ><i class="fa-solid fa-circle-user"></i><br /><span class="iconname"
+            >マイページ</span
+          ></a
+        >
+      </li>
+  </nav>
+<style>
+ 
+            @media screen and (max-width: 768px) {
       * {
       font-size:85% ; /* スマホではフォントサイズを小さくする */
       }
       }
-  
+      .menu {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu li {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .menu a i {
+        font-size: 24px;
+      }
+
+      .menu a span {
+        display: block;
+        font-size: 12px; /* テキストサイズ */
+        margin-top: 5px;
+      }
+
+      @media (max-width: 768px) {
         .menu {
-          position: fixed;
-          left: 0;
-          bottom: 0;
-          background: white;
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-          padding: 10px 0;
-          box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
         }
-  
+
         .menu li {
-          display: inline-block;
-          text-align: center;
+          padding: 5px;
         }
-  
-        .menu a {
-          text-decoration: none;
-          color: black;
-        }
-  
-        .menu a i {
-          font-size: 24px;
-        }
-  
-        .menu a span {
-          display: block;
-          font-size: 12px; /* テキストサイズ */
-          margin-top: 5px;
-        }
-  
-        @media (max-width: 768px) {
-          .menu {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-          }
-  
-          .menu li {
-            padding: 5px;
-          }
-        }
-      input {
-        font-size: 200%;
-        background: skyblue;
       }
-
-      button {
-        font-size: 200%;
-      }
-      
-    </style>
-
-    <style>
       h1 {
         font-family: sans-serif;
         display: flex;
@@ -190,9 +171,23 @@
         justify-content: center; /* 横方向の中央揃え */
         text-align: center;
         background: skyblue;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      }
+
+      h2 {
+        font-family: sans-serif;
+        border-style: double;
+      }
+
+      input {
+        font-size: 200%;
+        background: skyblue;
+      }
+
+      button {
+        font-size: 200%;
       }
     </style>
   </body>
